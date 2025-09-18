@@ -8,7 +8,7 @@
     <strong>JavaScript</strong>.
     Ele permite adicionar atividades com notas, impede duplicatas
     e calcula a média final em comparação com uma nota mínima.
-    Este projeto é estático e não é responsivo.
+    Este projeto agora é responsivo.
 </p>
 <p>
     🔗 Live Demo: <a href="https://grade-average-calculator-asrdrgm.vercel.app/" target="_blank">Ver na Vercel</a>
@@ -35,11 +35,12 @@
     <li>Validação que impede atividades duplicadas;</li>
     <li>Cálculo da média final em relação a uma nota mínima;</li>
     <li>Atualização dinâmica da tabela com ícones de aprovado/reprovado;</li>
-    <li>Mensagens de alerta para entradas repetidas.</li>
+    <li>Mensagens de alerta para entradas repetidas;</li>
+    <li>Layout responsivo para tablets e dispositivos móveis.</li>
 </ul>
 <h2>Notas</h2>
 <p>
     Este foi um projeto de prática para trabalhar com formulários, validação
     e atualização dinâmica de tabelas utilizando JavaScript.
-    Ele utiliza layouts fixos e não está otimizado para dispositivos móveis.
+    Ele agora se adapta a diferentes tamanhos de tela graças às media queries responsivas.
 </p>

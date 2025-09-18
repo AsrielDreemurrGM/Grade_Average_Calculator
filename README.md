@@ -8,7 +8,7 @@
     <strong>JavaScript</strong>.
     It allows adding activities with grades, prevents duplicates,
     and calculates a final average compared to a minimum score.
-    This project is static and not responsive.
+    This project is now responsive.
 </p>
 <p>
     🔗 Live Demo: <a href="https://grade-average-calculator-asrdrgm.vercel.app/" target="_blank">View on Vercel</a>
@@ -33,11 +33,12 @@
     <li>Validation preventing duplicate activities;</li>
     <li>Final average calculation against a minimum grade;</li>
     <li>Dynamic table updates with pass/fail icons;</li>
-    <li>Alert messages for repeated entries.</li>
+    <li>Alert messages for repeated entries;</li>
+    <li>Responsive layout for tablets and mobile devices.</li>
 </ul>
 <h2>Notes</h2>
 <p>
     This was a practice project for handling forms, validation,
     and dynamic table updates with JavaScript.
-    It uses fixed layouts and is not optimized for mobile devices.
+    It now adapts to different screen sizes thanks to responsive media queries.
 </p>
