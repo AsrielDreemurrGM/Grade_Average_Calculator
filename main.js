@@ -5,7 +5,12 @@ const activities = [];
 const grades = [];
 const spanPassed = '<span class="result passed">Passed</span>';
 const spanFailed = '<span class="result failed">Failed</span>';
-const minimumGrade = parseFloat(prompt("Enter the minimum grade (0 to 10):"));
+
+let minimumGrade;
+
+do {
+    minimumGrade = parseFloat(prompt("Enter the minimum grade (0 to 10):"));
+} while (isNaN(minimumGrade) || minimumGrade < 0 || minimumGrade > 10);
 
 let rows = '';
 
