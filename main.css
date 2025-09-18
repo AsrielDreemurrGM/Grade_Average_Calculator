@@ -58,7 +58,7 @@ form input {
     padding: 8px;
 }
 
-#nota-atividade {
+#activity-grade {
     width: 15%;
 }
 
@@ -90,7 +90,7 @@ table td img {
     height: 30px;
 }
 
-.resultado {
+.result {
     padding: 8px;
     font-weight: bold;
     color: white;
@@ -98,10 +98,10 @@ table td img {
     border-radius: 3px;
 }
 
-.aprovado {
+.passed {
     background-color: #009432;
 }
 
-.reprovado {
+.failed {
     background-color: red;
 }

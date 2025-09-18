@@ -1,63 +1,63 @@
-const form = document.getElementById('form-atividade');
-const imgAprovado = '<img src="./images/aprovado.png" alt ="Emoji Celebrando" />';
-const imgReprovado = '<img src="./images/reprovado.png" alt ="Emoji Decepcionado" />';
-const atividades = [];
-const notas = [];
-const spanAprovado = '<span class="resultado aprovado">Aprovado</span>';
-const spanReprovado = '<span class="resultado reprovado">Reprovado</span>';
-const notaMinima = parseFloat(prompt("Digite a nota mínima (0 à 10):"));
+const form = document.getElementById('form-activity');
+const imgPassed = '<img src="./images/passed.png" alt="Celebrating Emoji" />';
+const imgFailed = '<img src="./images/failed.png" alt="Disappointed Emoji" />';
+const activities = [];
+const grades = [];
+const spanPassed = '<span class="result passed">Passed</span>';
+const spanFailed = '<span class="result failed">Failed</span>';
+const minimumGrade = parseFloat(prompt("Enter the minimum grade (0 to 10):"));
 
-var linhas = '';
+let rows = '';
 
 form.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    adicionaLinha();
-    atualizaTabela();
-    atualizaMediaFinal();
+    addRow();
+    updateTable();
+    updateFinalAverage();
 })
 
-function adicionaLinha() {
-    const inputNomeAtividade = document.getElementById('nome-atividade');
-    const inputNotaAtividade = document.getElementById('nota-atividade');
+function addRow() {
+    const inputActivityName = document.getElementById('activity-name');
+    const inputActivityGrade = document.getElementById('activity-grade');
 
-    if (atividades.includes(inputNomeAtividade.value)) {
-        alert(`A atividade:  ${inputNomeAtividade.value} já foi inserida`);
+    if (activities.includes(inputActivityName.value)) {
+        alert(`The activity "${inputActivityName.value}" has already been added`);
     } else {
-    atividades.push(inputNomeAtividade.value);
-    notas.push(parseFloat(inputNotaAtividade.value));
+        activities.push(inputActivityName.value);
+        grades.push(parseFloat(inputActivityGrade.value));
 
-    var linha = "<tr>";
-    linha += `<td>${inputNomeAtividade.value}</td>`;
-    linha += `<td>${inputNotaAtividade.value}</td>`;
-    linha += `<td>${inputNotaAtividade.value >= notaMinima ? imgAprovado : imgReprovado}</td>`;
-    linha += "</tr>"
+        let row = "<tr>";
+        row += `<td>${inputActivityName.value}</td>`;
+        row += `<td>${inputActivityGrade.value}</td>`;
+        row += `<td>${inputActivityGrade.value >= minimumGrade ? imgPassed : imgFailed}</td>`;
+        row += "</tr>"
 
-    linhas += linha;
+        rows += row;
     }
 
-    inputNomeAtividade.value = '';
-    inputNotaAtividade.value = '';
+    inputActivityName.value = '';
+    inputActivityGrade.value = '';
 }
 
-function atualizaTabela() {
-    const corpoTabela = document.querySelector('tbody');
-    corpoTabela.innerHTML = linhas;
+function updateTable() {
+    const tableBody = document.querySelector('tbody');
+    tableBody.innerHTML = rows;
 }
 
-function atualizaMediaFinal() {
-    const mediaFinal = calculaMediaFinal();
+function updateFinalAverage() {
+    const finalAverage = calculateFinalAverage();
 
-    document.getElementById('media-final-valor').innerHTML = mediaFinal.toFixed(2);
-    document.getElementById('media-final-resultado').innerHTML = mediaFinal >= notaMinima ? spanAprovado : spanReprovado;
+    document.getElementById('final-average-value').innerHTML = finalAverage.toFixed(2);
+    document.getElementById('final-average-result').innerHTML = finalAverage >= minimumGrade ? spanPassed : spanFailed;
 }
 
-function calculaMediaFinal() {
-    var somaDasNotas = 0;
+function calculateFinalAverage() {
+    let sumOfGrades = 0;
 
-    for (var i = 0; i < notas.length; i++) {
-        somaDasNotas += notas[i];
+    for (let i = 0; i < grades.length; i++) {
+        sumOfGrades += grades[i];
     }
 
-    return somaDasNotas / notas.length;
+    return sumOfGrades / grades.length;
 }
